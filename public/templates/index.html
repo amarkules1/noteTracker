@@ -1,0 +1,35 @@
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>HW 1</title>
+		<link href="/public/css/stylesheet.css" rel="stylesheet"/>
+	</head>
+	<body>
+		<div id='outerDiv'>
+			<header>Temperature Converter</header>
+			<div id='convertForm'><form method='GET' action='server.js'>
+				<h3>Convert:</h3>
+				<input id='temp' type='text' name='temp'></br>
+				<div id='fromCol'>
+					<h4>From</h4>
+					<input type='radio' name='fromUnit' value='Celsius'> Celsius</br>
+					<input type='radio' name='fromUnit' value='Farenheit'> Farenheit</br>
+					<input type='radio' name='fromUnit' value='Kelvin'> Kelvin</br>
+					<input type='radio' name='fromUnit' value='Rankine'> Rankine</br>
+				</div>
+				<div id='toCol'>
+					<h4>To</h4>
+					<input type='radio' name='toUnit' value='Celsius'> Celsius</br>
+					<input type='radio' name='toUnit' value='Farenheit'> Farenheit</br>
+					<input type='radio' name='toUnit' value='Kelvin'> Kelvin</br>
+					<input type='radio' name='toUnit' value='Rankine'> Rankine</br>
+				</div>
+				<div id='submitButton'><input type='submit' value='Convert' id='conv'></div>
+			</form></div>
+			</br>
+			<div id='conversion'><%= conversionString %></div></br>
+			<div id='formula'><%= formulaString%></div>
+		</div>
+	</body>
+</html>
