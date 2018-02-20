@@ -1,4 +1,33 @@
-<html lang="en">
+<!DOCTYPE html> 
+<html>
+  <head>
+      <title>HW3</title>
+	  <script src = "scripts/js1.js"></script>
+    </head>
+    <body>
+      <% if ( userFullName ) { %>
+        <h2>Hello <%=userFullName%> </h2>
+		<input type='hidden' id='uName' value=<%=userFullName%>>
+         <a href="/signout">Sign out</a>
+      <% } else { %>
+        <a href="/signup">Signup</a>
+        <a href="/signin">Signin</a>
+    <% } %>    <br>
+		<div id='outerDiv'>
+			<h1>Notes</h1>
+			<table id='table'>
+				<tr>
+					<th>Subject</th>
+					<th>View</th>
+					<th>Delete</th>
+				</tr>
+			</table>
+			<input type='button' value='New Note' onclick='newNote()'>
+		</div>
+    </body>
+ </html>
+
+<!--<html lang="en">
 	<head>
 		<meta charset="utf-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,4 +47,4 @@
 			<input type='button' value='New Note' onclick='newNote()'>
 		</div>
 	</body>
-</html>
+</html>-->

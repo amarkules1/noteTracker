@@ -8,6 +8,7 @@ function getParameterByName(name) {
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 var toView = getParameterByName('id');
+var uName = getParameterByName('uName');
 var xmlhttp = new XMLHttpRequest(),json;
 xmlhttp.onreadystatechange = function() {
 	if(xmlhttp.readyState === 4 && xmlhttp.status === 200) {
@@ -33,5 +34,5 @@ function saveNote() {
 	var xmlhttp = new XMLHttpRequest();
 	xmlhttp.open('POST', '/createNote', true);
 	xmlhttp.setRequestHeader("Content-Type", "application/json");
-	xmlhttp.send("{\"subject\": \""+subj+"\", \"note\": \""+noteInfo+"\"}");
+	xmlhttp.send("{\"subject\": \""+subj+"\", \"note\": \""+noteInfo+"\", \uName\": \""+uName+"\"}");
 }

@@ -22,13 +22,16 @@ var xmlhttp = new XMLHttpRequest(),json;
 xmlhttp.onreadystatechange = function() {
 	if(xmlhttp.readyState === 4 && xmlhttp.status === 200) {
 		json = JSON.parse(xmlhttp.responseText);
+		var uName = document.getElementById('uName').value
 		for(var i = 0; i<json.length;i++){
 			var note = json[i];
+			if(note['uName'] == uName){
 			var table = document.getElementById('table');
 			table.innerHTML += "<tr><td>"+note['subject']+
-			"</td><td><a href=\"/viewNote?id="+note['_id']+
+			"</td><td><a href=\"/viewNote?id="+note['_id']+"&uName="+uName+
 			"\">View</a></td><td><a href=\"index?toDel="+
 			note['_id']+"\">Delete</a></td></tr>";
+			}
 		}
 	}
 };
