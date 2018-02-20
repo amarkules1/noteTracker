@@ -1,6 +1,7 @@
 var lastID = 0;
+var uname = "";
 function newNote(){
-	window.location.href = "/viewNote?id="+(lastID+1);
+	window.location.href = "/viewNote?id="+(lastID+1)+"&uName="+uName;
 }
 function getParameterByName(name) {
     var url = window.location.href;
@@ -22,9 +23,12 @@ var xmlhttp = new XMLHttpRequest(),json;
 xmlhttp.onreadystatechange = function() {
 	if(xmlhttp.readyState === 4 && xmlhttp.status === 200) {
 		json = JSON.parse(xmlhttp.responseText);
-		var uName = document.getElementById('uName').value
+		uName = document.getElementById('greet').innerHTML;
+		uName = uName.substring(6, (uName.length - 1));
 		for(var i = 0; i<json.length;i++){
 			var note = json[i];
+			console.log(note['uName']);
+			console.log(uName);
 			if(note['uName'] == uName){
 			var table = document.getElementById('table');
 			table.innerHTML += "<tr><td>"+note['subject']+

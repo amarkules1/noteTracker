@@ -6,8 +6,8 @@
     </head>
     <body>
       <% if ( userFullName ) { %>
-        <h2>Hello <%=userFullName%> </h2>
-		<input type='hidden' id='uName' value=<%=userFullName%>>
+        <h2 id="greet">Hello <%=userFullName%> </h2>
+		
          <a href="/signout">Sign out</a>
       <% } else { %>
         <a href="/signup">Signup</a>

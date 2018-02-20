@@ -34,5 +34,5 @@ function saveNote() {
 	var xmlhttp = new XMLHttpRequest();
 	xmlhttp.open('POST', '/createNote', true);
 	xmlhttp.setRequestHeader("Content-Type", "application/json");
-	xmlhttp.send("{\"subject\": \""+subj+"\", \"note\": \""+noteInfo+"\", \uName\": \""+uName+"\"}");
+	xmlhttp.send("{\"subject\": \""+subj+"\", \"note\": \""+noteInfo+"\", \"uName\": \""+uName+"\"}");
 }
