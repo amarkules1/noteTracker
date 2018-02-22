@@ -1,5 +1,5 @@
 const User = require('mongoose').model('User'); const passport = require('passport');
-function getErrorMessage(err) {  let message = '';
+function getErrorMessage(err) {  var message = '';
   if (err.code) {
 	  switch (err.code) {
       case 11000:
