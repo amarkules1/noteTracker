@@ -15,7 +15,8 @@ function getParameterByName(name) {
 var del = getParameterByName('toDel');
 if(del){
 	var xmlhttp = new XMLHttpRequest();
-	
+	xmlhttp.onreadystatechange = function() {
+	if(xmlhttp.readyState === 4 && xmlhttp.status === 200) { location.reload()}}
 	xmlhttp.open('DELETE', '/notes/'+del, true);
 	xmlhttp.send();
 }
